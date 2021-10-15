@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/arpabet-studier/static/css/main.a617e044.chunk.css",
+    "main.js": "/arpabet-studier/static/js/main.240c2d79.chunk.js",
+    "main.js.map": "/arpabet-studier/static/js/main.240c2d79.chunk.js.map",
+    "runtime-main.js": "/arpabet-studier/static/js/runtime-main.4ad33b5f.js",
+    "runtime-main.js.map": "/arpabet-studier/static/js/runtime-main.4ad33b5f.js.map",
+    "static/js/2.0667cfdf.chunk.js": "/arpabet-studier/static/js/2.0667cfdf.chunk.js",
+    "static/js/2.0667cfdf.chunk.js.map": "/arpabet-studier/static/js/2.0667cfdf.chunk.js.map",
+    "static/js/3.03f805db.chunk.js": "/arpabet-studier/static/js/3.03f805db.chunk.js",
+    "static/js/3.03f805db.chunk.js.map": "/arpabet-studier/static/js/3.03f805db.chunk.js.map",
+    "index.html": "/arpabet-studier/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/arpabet-studier/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.0667cfdf.chunk.js.LICENSE.txt": "/arpabet-studier/static/js/2.0667cfdf.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/arpabet-studier/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4ad33b5f.js",
+    "static/js/2.0667cfdf.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.240c2d79.chunk.js"
+  ]
+}
