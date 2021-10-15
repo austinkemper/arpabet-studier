@@ -1,14 +1,31 @@
 import React from 'react';
 import './App.css';
 import Quiz from './Quiz';
+import { getNextQuizWordThatHasPhones } from './util';
 
-export default class App extends React.PureComponent<{}, {}> {
+interface Props {}
+interface State {
+  quizWord: string;
+}
+
+export default class App extends React.PureComponent<Props, State> {
+
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      quizWord: getNextQuizWordThatHasPhones(),
+    };
+  }
+
+  onNextWord = () => {
+    const newQuizWord = getNextQuizWordThatHasPhones();
+    this.setState({quizWord: newQuizWord});
+  }
 
   render = () => {
     return (
       <div className="App">
-        <Quiz quizWord="iconic" />
-
+        <Quiz quizWord={this.state.quizWord} onNext={this.onNextWord} />
       </div>
     );
   }

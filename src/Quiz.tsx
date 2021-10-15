@@ -5,36 +5,49 @@ import incorrectIcon from './assets/incorrect.png';
 
 interface Props {
   quizWord: string;
+  onNext: () => void;
 }
 
 interface State {
   answers?: string[];
-  guess?: string;
+  guess: string;
   isCorrect?: boolean;
 }
 
 export default class Quiz extends React.PureComponent<Props, State> {
 
-  input: React.RefObject<HTMLInputElement> = React.createRef();
-
   constructor(props: Props) {
     super(props);
     this.state = {
+      guess: '',
     }
+  }
+
+  onChangeGuess = (e: React.ChangeEvent<HTMLInputElement>) => {
+    this.setState({
+      guess: e.target.value.toUpperCase()
+    });
   }
 
   handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    let guess = this.input.current?.value.toUpperCase();
-    if (!guess) {
-      guess = '';
-    }
-
     const answers = strippedPhonesForWord(this.props.quizWord);
-    const isCorrect = answers.includes(guess);
+    const isCorrect = answers.includes(this.state.guess);
 
-    this.setState({answers, guess, isCorrect});
+    this.setState({answers, isCorrect});
+  }
+
+  onClickNext = () => {
+    this.props.onNext();
+    this.setState({
+      answers: undefined,
+      guess: '',
+      isCorrect: undefined,
+    });
+
+    // Hacky not using ref
+    document.getElementById('guess')?.focus()
   }
 
   renderAnswers = () => {
@@ -71,11 +84,12 @@ export default class Quiz extends React.PureComponent<Props, State> {
 
           <label>
             Enter the Arpabet for "{this.props.quizWord}":{" "}
-          <input autoFocus={true} ref={this.input}></input>
+          <input id="guess" autoFocus={true} value={this.state.guess} onChange={this.onChangeGuess}></input>
           </label>
 
           <input type="submit" value="Submit" />
         </form>
+        <button onClick={this.onClickNext}>Next</button>
         {this.renderAnswers()}
       </div>
     );
