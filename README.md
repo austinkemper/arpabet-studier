@@ -1,5 +1,5 @@
 
-## GitHub Pages
-https://austinkemper.github.io/arpabet-studier
+## GitHub Pages (TODO)
+https://akjams.github.io/arpabet-studier
 
-Followed: https://create-react-app.dev/docs/deployment/#github-pages-https-pagesgithubcom
+Used create-react-app
